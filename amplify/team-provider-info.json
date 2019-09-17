@@ -1,0 +1,27 @@
+{
+    "sumerian": {
+        "awscloudformation": {
+            "AuthRoleName": "sumerian-amplify-app-sumerian-20190808153652-authRole",
+            "UnauthRoleArn": "arn:aws:iam::121613539438:role/sumerian-amplify-app-sumerian-20190808153652-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::121613539438:role/sumerian-amplify-app-sumerian-20190808153652-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "sumerian-amplify-app-sumerian-20190808153652-deployment",
+            "UnauthRoleName": "sumerian-amplify-app-sumerian-20190808153652-unauthRole",
+            "StackName": "sumerian-amplify-app-sumerian-20190808153652",
+            "StackId": "arn:aws:cloudformation:us-east-1:121613539438:stack/sumerian-amplify-app-sumerian-20190808153652/421083e0-ba1c-11e9-a371-0ad4d2e93658"
+        },
+        "categories": {
+            "auth": {
+                "cognito0faec720": {}
+            },
+            "xr": {
+                "SumerianAmplify": {
+                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=c9586639e1ca41e7a751e86ed5457639.scene",
+                    "sceneId": "c9586639e1ca41e7a751e86ed5457639.scene",
+                    "region": "us-east-1",
+                    "projectName": "Drafts"
+                }
+            }
+        }
+    }
+}
