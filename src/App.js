@@ -11,6 +11,10 @@ import Amplify, { XR, awsconfig } from 'aws-amplify';
  import scene_config from './sumerian_exports';
  import { SumerianScene, withAuthenticator } from 'aws-amplify-react';
 
+ import AWS from 'aws-sdk';
+
+new AWS.Polly();
+
 //  XR.configure({ // XR category configuration
 //    SumerianProvider: { // Sumerian-specific configuration
 //      region: 'us-east-1', // Sumerian scene region
@@ -52,7 +56,7 @@ import Amplify, { XR, awsconfig } from 'aws-amplify';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={ { height: '100vh' } }>
         <SumerianScene sceneName='SumerianAmplify' />
       </div>
     );

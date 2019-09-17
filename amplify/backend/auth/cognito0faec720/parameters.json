@@ -1,7 +1,36 @@
 {
     "identityPoolName": "sumerian_amplify_app_identitypool_ad1f4cbc",
-    "allowUnauthenticatedIdentities": true,
-    "authSelections": "identityPoolOnly",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "cognite40b5fb9",
+    "userPoolName": "cognito0faec720_userpool_e40b5fb9",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "cognite40b5fb9_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "authSelections": "identityPoolAndUserPool",
     "resourceName": "cognito0faec720",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -14,5 +43,7 @@
             "UnauthRole",
             "Arn"
         ]
-    }
+    },
+    "useDefault": "default",
+    "dependsOn": []
 }

@@ -1,20 +1,21 @@
 {
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"auth": {
-		"cognito0faec720": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"xr": {
-		"SumerianAmplify": {
-			"service": "Sumerian",
-			"providerPlugin": "awscloudformation"
-		}
-	}
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "auth": {
+        "cognito0faec720": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
+    "xr": {
+        "SumerianAmplify": {
+            "service": "Sumerian",
+            "providerPlugin": "awscloudformation"
+        }
+    }
 }
