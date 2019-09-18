@@ -1,30 +1,13 @@
 import React , { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-// import Amplify from 'aws-amplify';
-// import aws_exports from './aws-exports';
-
-
 import Amplify, { XR, awsconfig } from 'aws-amplify';
+import scene_config from './sumerian_exports';
+import { SumerianScene, withAuthenticator } from 'aws-amplify-react';
+import AWS from 'aws-sdk';
+import { Auth } from 'aws-amplify';
 
- import scene_config from './sumerian_exports';
- import { SumerianScene, withAuthenticator } from 'aws-amplify-react';
-
- import AWS from 'aws-sdk';
-
+// import AWS services used inside Sumerian
 new AWS.Polly();
-
-//  XR.configure({ // XR category configuration
-//    SumerianProvider: { // Sumerian-specific configuration
-//      region: 'us-east-1', // Sumerian scene region
-//      scenes: {
-//        "SumerianAmplify": {   // Friendly scene name
-//            sceneConfig: scene_config // Scene JSON configuration
-//          },
-//      }
-//    }
-//  });
 
  Amplify.configure({
   ...awsconfig,
@@ -38,20 +21,10 @@ new AWS.Polly();
   }
 });
 
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div>Sumerian Scene</div>
-//       <div style={{height: '600px'}}>  
-//         <SumerianScene sceneName='SumerianAmplify' />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
+Auth.currentAuthenticatedUser({
+  bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+}).then(user => console.log(user))
+.catch(err => console.log(err));
 
 class App extends Component {
   render() {
@@ -67,18 +40,3 @@ export default withAuthenticator(App, { includeGreetings: true });
 
 
 
-// class App extends Component {
-//   async componentDidMount() {
-//     await XR.loadScene("SumerianAmplify", "sumerian-scene-dom-id");
-//     XR.start("SumerianAmplify");
-//   }
-//   render() {
-//     return (
-//       <div className="App">
-//         <div id="sumerian-scene-dom-id"></div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default withAuthenticator(App, { includeGreetings: true });
